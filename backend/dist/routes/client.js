@@ -80,8 +80,6 @@ router.route('/user/user-logout').post(function (req, res) {
   });
   res.status(200).json('logout');
 });
-
-
 router.route('/dashboard').get(function (req, res) {
   if (req.session.user) {
     res.json("login");

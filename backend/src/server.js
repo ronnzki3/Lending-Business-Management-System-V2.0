@@ -36,9 +36,11 @@ app.use(cors({
         methods: ["GET", "POST"],
         credentials: true,
 }));
+app.enable('trust proxy',true);
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(session({
+    proxy: true,
     key:"userKey",
     secret: keySecret,
     resave: false,
