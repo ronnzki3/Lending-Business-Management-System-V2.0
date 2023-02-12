@@ -56,6 +56,10 @@ connection.once('open',()=>{
 });
 
 
+app.get('/', (req, res) => {
+    res.sendStatus(200)
+  })
+
 app.use('/client', ClientRouter )
 app.use('/loan', LoanRouter )
 

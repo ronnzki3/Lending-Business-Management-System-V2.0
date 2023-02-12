@@ -50,6 +50,9 @@ var connection = mongoose.connection;
 connection.once('open', function () {
   console.log("MongoDB database connected successfully.");
 });
+app.get('/', function (req, res) {
+  res.sendStatus(200);
+});
 app.use('/client', ClientRouter);
 app.use('/loan', LoanRouter);
 
