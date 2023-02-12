@@ -29,6 +29,6 @@
     "dev": "nodemon --exec babel-node src/server.js",
     "build": "babel src -d dist",
     "start": "node dist/server.js",
-    "both-dev": "concurrently \"npm run dev\" \"npm --prefix ../frontend run dev\""
+    "both-dev": "concurrently \"npm run dev\" \"npm --prefix ../client run dev\""
   }
 }
