@@ -7,12 +7,12 @@ var ClientRouter = require("./routes/client");
 var LoanRouter = require("./routes/loan");
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var session = require('express-session');
+
+// const session = require('express-session');
 
 //In case express-session failed.
 //from express session change to cookie session - due to server error deplyment
-// const session = require('cookie-session');
-
+var session = require('cookie-session');
 require('dotenv').config();
 var app = express();
 var port = process.env.PORT || 5000;
