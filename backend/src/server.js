@@ -8,7 +8,11 @@ const LoanRouter = require('./routes/loan');
 
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-const session = require('express-session');
+
+//from express session change to cookie session - due to server error deplyment
+// const session = require('express-session');
+
+const session = require('cookie-session');
 
 require('dotenv').config();
 
