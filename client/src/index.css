@@ -1,0 +1,81 @@
+/* body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+} */
+
+
+.lend-icon1{
+  background-image: url('Assets/lend2.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-color: lightgray;
+  /* background-position: 0 10%; */
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: block;
+}
+
+.lend-icon2{
+  background-image: url('Assets/lend3.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-color: lightgray;
+  /* background-position: 0 10%; */
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: block;
+}
+
+.lend-icon3{
+  background-image: url('Assets/lend1.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: lightgray;
+  /* background-position: 0 10%; */
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: block;
+}
+
+
+.lend-icon5{
+  background-image: url('Assets/lend5.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-color: lightgray;
+  /* background-position: 0 10%; */
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: block;
+}
+
+
+
+
+.lend-icon4{
+  background-image: url('Assets/lendmain.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 100%;
+  height: 100px;
+  display: block;
+  margin-bottom: 30px;
+}
