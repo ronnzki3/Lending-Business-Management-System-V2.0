@@ -7,12 +7,12 @@ var ClientRouter = require("./routes/client");
 var LoanRouter = require("./routes/loan");
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
-// const session = require('express-session');
+var session = require('express-session');
 
 //In case express-session failed.
 //from express session change to cookie session - due to server error deplyment
-var session = require('cookie-session');
+// const session = require('cookie-session');
+
 require('dotenv').config();
 var app = express();
 var port = process.env.PORT || 5000;
@@ -39,7 +39,7 @@ app.use(session({
   key: "userKey",
   secret: keySecret,
   resave: false,
-  saveUninitialized: false,
+  saveUninitialized: true,
   cookie: {
     expires: 60 * 60 * 24
   }
