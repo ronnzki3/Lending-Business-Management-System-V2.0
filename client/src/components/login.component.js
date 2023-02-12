@@ -55,7 +55,7 @@ export default class Login extends Component{
             // console.log("Incorrect user name/password." + this.state.loggedErr); 
         }else{            
             console.log(param);
-            window.location="/"
+            // window.location="/"
         }
     }
 
