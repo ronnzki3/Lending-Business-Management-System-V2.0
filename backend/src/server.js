@@ -24,12 +24,13 @@ const port = process.env.PORT || 5000;
 //supress mongoose deprecation warning
 mongoose.set('strictQuery', true);
 
-
+const client_uri=process.env.CLIENT_URI;
+const keySecret=process.env.SESSION_SECRET;
 
 //middleware
 app.use(express.json());
 app.use(cors({
-        origin: [process.env.CLIENT_URI],
+        origin: [client_uri],
         methods: ["GET", "POST"],
         credentials: true,
 }));
@@ -37,7 +38,7 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(session({
     key:"userKey",
-    secret: process.env.SESSION_SECRET,
+    secret: keySecret,
     resave: false,
     saveUninitialized: false,
     cookie: {
@@ -56,9 +57,9 @@ connection.once('open',()=>{
 });
 
 
-app.get('/', (req, res) => {
+app.get('/',(req, res)=>{
     res.sendStatus(200)
-  })
+})
 
 app.use('/client', ClientRouter )
 app.use('/loan', LoanRouter )

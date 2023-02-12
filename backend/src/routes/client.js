@@ -53,6 +53,8 @@ router.route('/loan/:id').get((req, res)=>{
 });
 
 
+
+//user login
 //find username and password
 router.route('/user/user-login').post((req, res) =>{
     User.findOne({
@@ -67,7 +69,18 @@ router.route('/user/user-login').post((req, res) =>{
     .catch(err => res.status(400).json(err));
 });
 
-router.route('/dashbord').get((req, res)=>{
+
+//user logout
+router.route('/user/user-logout').post((req, res)=>{
+    res.cookie('userKey','none',{
+        expires:new Date(Date.now() + 5 * 1000),
+        httpOnly:true,
+    })
+    res.status(200).json('logout')
+});
+
+
+router.route('/dashboard').get((req, res)=>{
     if(req.session.user){
         res.json("login");
     }else{
@@ -76,8 +89,12 @@ router.route('/dashbord').get((req, res)=>{
 });
 
 
+
+
+
+
 //delete client
-router.route('/lists/:id').delete((req,res)=>{
+router.route('/delete/:id').delete((req,res)=>{
     Client.findByIdAndDelete(req.params.id)
     .then( client => res.json('Client was deleted successfully.'))
     .catch( err => res.status(400).json(err));

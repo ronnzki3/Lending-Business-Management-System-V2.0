@@ -59,6 +59,7 @@ router.route('/loan/:id').get(function (req, res) {
   });
 });
 
+//user login
 //find username and password
 router.route('/user/user-login').post(function (req, res) {
   User.findOne({
@@ -70,7 +71,16 @@ router.route('/user/user-login').post(function (req, res) {
     return res.status(400).json(err);
   });
 });
-router.route('/dashbord').get(function (req, res) {
+
+//user logout
+router.route('/user/user-logout').post(function (req, res) {
+  res.cookie('userKey', 'none', {
+    expires: new Date(Date.now() + 5 * 1000),
+    httpOnly: true
+  });
+  res.status(200).json('logout');
+});
+router.route('/dashboard').get(function (req, res) {
   if (req.session.user) {
     res.json("login");
   } else {
@@ -79,7 +89,7 @@ router.route('/dashbord').get(function (req, res) {
 });
 
 //delete client
-router.route('/lists/:id')["delete"](function (req, res) {
+router.route('/delete/:id')["delete"](function (req, res) {
   Client.findByIdAndDelete(req.params.id).then(function (client) {
     return res.json('Client was deleted successfully.');
   })["catch"](function (err) {
