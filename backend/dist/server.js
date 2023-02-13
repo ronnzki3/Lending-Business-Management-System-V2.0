@@ -29,7 +29,7 @@ app.use(cors({
   methods: ["GET", "POST"],
   credentials: true
 }));
-app.enable('trust proxy', 1);
+app.enable('trust proxy');
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({
   extended: true
@@ -40,6 +40,8 @@ app.use(session({
   secret: keySecret,
   resave: false,
   saveUninitialized: false,
+  name: 'userKeyMaster06521',
+  // This needs to be unique per-host.
   cookie: {
     expires: 60 * 60 * 24
   }
