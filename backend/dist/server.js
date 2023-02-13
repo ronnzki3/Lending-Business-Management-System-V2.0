@@ -29,7 +29,7 @@ app.use(cors({
   methods: ["GET", "POST"],
   credentials: true
 }));
-app.enable('trust proxy', true);
+app.enable('trust proxy', 1);
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({
   extended: true
@@ -39,7 +39,7 @@ app.use(session({
   key: "userKey",
   secret: keySecret,
   resave: false,
-  saveUninitialized: true,
+  saveUninitialized: false,
   cookie: {
     expires: 60 * 60 * 24
   }
