@@ -55,7 +55,7 @@ export default class Login extends Component{
             // console.log("Incorrect user name/password." + this.state.loggedErr); 
         }else{            
             console.log(param);
-            // window.location="/"
+            window.location="/"
         }
     }
 
@@ -80,7 +80,7 @@ export default class Login extends Component{
                     </div>
 
                     <div className="col-md-8 order-first order-md-2" style={{backgroundColor: "#B6EAF8"}}>
-                           <div className="col-md-5 border mx-auto d-flex flex-column p-5 bg-white rounded mt-sm-0 mt-md-5">
+                           <div className="col-md-5 border mx-auto d-flex flex-column p-3 pb-5 px-5 bg-white rounded mt-sm-0 mt-md-5">
                                 <div className="lend-icon4"></div>
                                 <h4>Log in to CLIIMS</h4>
                                 <br/>

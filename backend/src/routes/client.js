@@ -72,11 +72,7 @@ router.route('/user/user-login').post((req, res) =>{
 
 //user logout
 router.route('/user/user-logout').post((req, res)=>{
-    res.cookie('userKey','none',{
-        expires:new Date(Date.now() + 5 * 1000),
-        httpOnly:true,
-    })
-    res.status(200).json('logout')
+    req.session.user=null;
 });
 
 
