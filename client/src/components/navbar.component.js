@@ -25,7 +25,7 @@ export default class Navbar extends Component{
                         <Link to={'/new'} className="nav-link" >Add New Client</Link>
                     </li>
                     <li className="nav-item">
-                        <Link to={'/'} className="nav-link ms-5 text-danger" >Logout</Link>
+                        <Link to={'/'} className="nav-link ms-5 text-danger fw-bold" >Logout</Link>
                     </li>
                     </ul>                  
                 </div>

@@ -48,7 +48,7 @@ app.use(session({
     name: 'userKeyMaster06521', // This needs to be unique per-host.
     
     //*********************** */
-    //production
+    // //production
     cookie: {       
         httpOnly: true, 
         secure: true, 
@@ -60,7 +60,7 @@ app.use(session({
     // //*********************** */
     // //local
     // cookie: {       
-    //     maxAge: 1000 * 60 * 60 * 48
+    //     expires:1000 * 60 * 60 * 24,
     // }
 }));
 
