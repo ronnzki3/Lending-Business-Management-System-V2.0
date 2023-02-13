@@ -43,7 +43,10 @@ app.use(session({
   name: 'userKeyMaster06521',
   // This needs to be unique per-host.
   cookie: {
-    expires: 60 * 60 * 24
+    httpOnly: true,
+    secure: true,
+    maxAge: 1000 * 60 * 60 * 48,
+    sameSite: 'none'
   }
 }));
 
